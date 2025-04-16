@@ -31,7 +31,7 @@ userRouter.post("/login", async (request, response) => {
       data: { message },
     } = await login({ email, password });
 
-    response.status(statusCode).json({ token, ...data  , message });
+    response.status(statusCode).json({ token, ...data, message });
   } catch {
     response.status(500).send("Something went wrong!");
   }
